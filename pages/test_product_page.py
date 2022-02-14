@@ -1,0 +1,38 @@
+import selectors
+
+from .base_page import BasePage
+from .locators import ProductPageLocators
+
+class ProductPage(BasePage):
+
+    def go_to_basket(self):
+        basket_button = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET).click()
+
+    def check_right_product_name(self):
+        true_product_name = self.browser.find_element(*ProductPageLocators.TRUE_NAME_PRODUCT)
+        message_product_name = self.browser.find_element(*ProductPageLocators.MESSAGE_NAME_PRODUCT)
+        # ...for check right work of method...
+        ''' message_product_name = "sdfsdf" '''
+
+
+        assert true_product_name.text == message_product_name.text ,\
+            "*** Product name in message not true!!! ***"
+
+
+    def visible_allert_message(self):
+        assert self.is_element_present(*ProductPageLocators.ALLERT_MESSAGE),\
+            "*** No allert message!!! ***"
+
+    def visible_add_to_basket_message(self):
+        assert  self.is_element_present(*ProductPageLocators.ADDED_TO_BASKET_MESSAGE),\
+            "*** No add to basket message!!! ***"
+
+    def check_right_product_prise(self):
+        prise_in_message = self.browser.find_element(*ProductPageLocators.PRISE_PRODUCT_IN_BASKET_MESSAGE)
+        true_prise = self.browser.find_element(*ProductPageLocators.TRUE_PRISE_PRODUCT_IN_BASKET)
+
+        #for check right work of method
+        ''' true_prise = "sdfdsf" '''
+
+        assert  prise_in_message.text == true_prise.text ,\
+            "*** Prise of product not true!!! ***"

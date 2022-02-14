@@ -15,15 +15,7 @@ class LoginPage(BasePage):
         find_link = self.browser.current_url
         assert link in find_link , "'login' not in current url"
 
-    def is_element_present(self, how, what):
-        try:
-            self.browser.find_element(how, what)
-        except NoSuchElementException :
-            return False
-        return True
-
     def should_be_login_form(self):
-
         assert self.is_element_present(*LoginPageLocators.LOGIN_FORM), "*** No login form ***"
 
         #проверки полей формы логина

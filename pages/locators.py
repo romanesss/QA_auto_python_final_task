@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 
 class MainPageLocators():
+
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
 class LoginPageLocators():
@@ -17,3 +18,13 @@ class LoginPageLocators():
     #LOGIN_REGISTRATION = (By.CSS_SELECTOR,    "#id_registration-email")
     #PASSWORD_REGISTRATION = (By.CSS_SELECTOR, "#id_registration-password1")
     #CONFIRM_PASSWORD = (By.CSS_SELECTOR,      "#id_registration-password2")
+
+class ProductPageLocators():
+
+    ADD_TO_BASKET = (By.CSS_SELECTOR,                   "[class='btn btn-lg btn-primary btn-add-to-basket']")
+    TRUE_NAME_PRODUCT = (By.CSS_SELECTOR,               "h1:nth-child(1)")
+    MESSAGE_NAME_PRODUCT = (By.CSS_SELECTOR,            "[class='alert alert-safe alert-noicon alert-success  fade in'] strong")
+    ALLERT_MESSAGE = (By.CSS_SELECTOR,                  "[class='alert alert-safe alert-noicon alert-success  fade in']")
+    ADDED_TO_BASKET_MESSAGE = (By.CSS_SELECTOR,           "[class='alertinner '] p:nth-child(1)")
+    TRUE_PRISE_PRODUCT_IN_BASKET = (By.CSS_SELECTOR,    "[class='price_color']")
+    PRISE_PRODUCT_IN_BASKET_MESSAGE = (By.CSS_SELECTOR, "[class='alertinner '] p:nth-child(1) strong")
