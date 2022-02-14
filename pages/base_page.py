@@ -1,4 +1,3 @@
-
 class BasePage():
 
     def __init__(self, browser, url, timeout=10):
