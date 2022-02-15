@@ -16,7 +16,7 @@ class LoginPage(BasePage):
         assert link in find_link , "'login' not in current url"
 
     def should_be_login_form(self):
-        assert self.is_element_present(*LoginPageLocators.LOGIN_FORM), "*** No login form ***"
+        assert self.is_element_present(*LoginPageLocators.LOGIN_FORM), "*** No login form!!! ***"
 
         #проверки полей формы логина
         #assert self.is_element_present(*LoginPageLocators.LOGIN_LOGIN),     "*** No login form element login    !!! ***"
@@ -25,7 +25,7 @@ class LoginPage(BasePage):
 
     def should_be_register_form(self):
 
-        assert self.is_element_present(*LoginPageLocators.REGISTRATION_FORM) , "*** No registration form ***"
+        assert self.is_element_present(*LoginPageLocators.REGISTRATION_FORM) , "*** No registration form!!! ***"
 
         #Проверки полей формы регистрации
         #assert self.is_element_present(*LoginPageLocators.LOGIN_REGISTRATION) ,    "*** No registration form element login            !!! ***"

@@ -1,4 +1,6 @@
 import math
+from .locators import BasePageLocators
+from .locators import BasketPageLocators
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, NoAlertPresentException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -12,6 +14,18 @@ class BasePage():
 
     def open(self, browser, url):
         self.browser.get(self.url)
+
+    def go_to_login_page(self):
+        login_link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
+        login_link.click()
+
+    def go_to_basket(self):
+        self.browser.find_element(*BasketPageLocators.GO_TO_BASKET_FROM_HOME).click()
+
+
+    def should_be_login_link(self):
+        assert  self.is_element_present(*BasePageLocators.LOGIN_LINK),\
+            "Login link is not present"
 
     def is_element_present(self, how, what):
         try:
@@ -33,11 +47,9 @@ class BasePage():
                 until_not(EC.presence_of_element_located((how, what)))
         except TimeoutException:
             return False
-
         return True
 
     def solve_quiz_and_get_code(self):
-
         alert = self.browser.switch_to.alert
         x = alert.text.split(" ")[2]
         answer = str(math.log(abs((12 * math.sin(float(x))))))
