@@ -1,11 +1,11 @@
-
+from pages.locators import BasketPageLocators
 from .base_page import BasePage
 from .locators import ProductPageLocators
 
 class ProductPage(BasePage):
 
     def go_to_basket(self):
-        basket_button = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET).click()
+        self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET).click()
 
     def check_right_product_name(self):
         true_product_name = self.browser.find_element(*ProductPageLocators.TRUE_NAME_PRODUCT)
@@ -15,7 +15,6 @@ class ProductPage(BasePage):
 
         assert true_product_name.text == message_product_name.text ,\
             "*** Product name in message not true!!! ***"
-
 
     def visible_allert_message(self):
         assert self.is_element_present(*ProductPageLocators.ALLERT_MESSAGE),\
@@ -36,7 +35,6 @@ class ProductPage(BasePage):
     def check_right_product_prise(self):
         prise_in_message = self.browser.find_element(*ProductPageLocators.PRISE_PRODUCT_IN_BASKET_MESSAGE)
         true_prise = self.browser.find_element(*ProductPageLocators.TRUE_PRISE_PRODUCT_IN_BASKET)
-
         #for check right work of method
         ''' true_prise = "sdfdsf" '''
 

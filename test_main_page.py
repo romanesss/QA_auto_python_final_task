@@ -12,7 +12,6 @@ class TestLoginFromMainPage():
         page.open(browser,link)
         page.go_to_login_page()
 
-
     def test_guest_should_see_login_link(self,browser) :
         link = "http://selenium1py.pythonanywhere.com/"
         page = MainPage(browser, link)
@@ -41,10 +40,11 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     link = 'http://selenium1py.pythonanywhere.com/en-gb/'
     page = BasketPage(browser, link)
     page.open(browser, link)
-    page.go_to_basket()
+    page.go_to_basket_page()
     page.empty_basket_text()
     "-------Negative-------"
     page.empty_basket_list()
     "----------------------"
+
 
 
