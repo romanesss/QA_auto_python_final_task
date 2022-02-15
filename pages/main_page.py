@@ -14,3 +14,8 @@ class MainPage(BasePage):
         assert  self.is_element_present(*MainPageLocators.LOGIN_LINK),\
             "Login link is not present"
 
+    def test_guest_cant_see_product_in_basket_opened_from_main_page(self):
+        pass
+
+    def test_guest_cant_see_product_in_basket_opened_from_product_page(self):
+        pass

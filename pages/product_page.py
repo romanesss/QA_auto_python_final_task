@@ -1,4 +1,3 @@
-import selectors
 
 from .base_page import BasePage
 from .locators import ProductPageLocators
@@ -14,7 +13,6 @@ class ProductPage(BasePage):
         # ...for check right work of method...
         ''' message_product_name = "sdfsdf" '''
 
-
         assert true_product_name.text == message_product_name.text ,\
             "*** Product name in message not true!!! ***"
 
@@ -22,6 +20,14 @@ class ProductPage(BasePage):
     def visible_allert_message(self):
         assert self.is_element_present(*ProductPageLocators.ALLERT_MESSAGE),\
             "*** No allert message!!! ***"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.ALLERT_MESSAGE), \
+            "Success message is presented, but should not be"
+
+    def should_not_dissapeared_be_message(self):
+        assert self.is_disappeared(*ProductPageLocators.ALLERT_MESSAGE),\
+            "*** Success message is not disappeared !!! ***"
 
     def visible_add_to_basket_message(self):
         assert  self.is_element_present(*ProductPageLocators.ADDED_TO_BASKET_MESSAGE),\
