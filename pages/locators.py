@@ -13,11 +13,6 @@ class MainPageLocators():
 
 class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
-
-    #селекторы полей формы логина
-    #LOGIN_LOGIN = (By.CSS_SELECTOR,    "#id_login-username")
-    #LOGIN_PASSWORD = (By.CSS_SELECTOR, "#id_login-password")
-
     REGISTRATION_FORM = (By.CSS_SELECTOR, "#register_form")
 
     #селекторы полей формы регистрации
@@ -26,7 +21,6 @@ class LoginPageLocators():
     CONFIRM_PASSWORD = (By.CSS_SELECTOR,      "#id_registration-password2")
 
     REGISTRATION_BUTTON = (By.CSS_SELECTOR,   "[name='registration_submit']")
-
     LOGIN_IMAGE = (By.CSS_SELECTOR,           ".icon-user")
 
 class ProductPageLocators():
